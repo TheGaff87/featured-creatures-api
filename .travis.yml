@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: QkLpo0dO/aTbh0BxEDsbOcUQXUeeCcA/jEVrvTnXcNOWII1nkZVrleobcF7u6crluQZrLn99+ziSSrEOq6FSLKXna4cgoVaTQG9SCShmM9lF/TpT1j/+D29qya/aLodd06bOxcNJuVjr1s6cg5wutRWnJt7KJfO0G27gpD4BDkNdVZgh4oTReyjb6NxtCQumOaHDz9BsGgfDtEzgZwkgo0t/k4b5MpTKIsgqWlND44Nek9l+Qd8fAiC1mnO8EHqdEkGBCpOI200I79pMrgscingLS0YFbQ5Ep2xmXKQQM56ZVeWtNl0ocYQZ7SUF4mfeuVpyLJiyiDjADkdq6XNLp8s23xOGsd32BGYDf2khYX8dGRjMevreRH9yHmLr8lISQpajk2KCrNdsAUWAKehIqpLoTLkQTePi/JvfpxO/esEkUEUWKsAQpyL1UXZm/Mum//JAApxQ1ZoYIunHAufQ9QFxeFmsVED/emrmKmXQmaMtwoCKxx21/MGwEfa2X70TrCp0cRRhqc7NMYApqt3XhDZtsmzy4pMviAjGe0Wv6iylZhFgzLAypwg9MvtWEBgL//WSC2Vjgvqj8kuy/F4UA7S1mFD/EdWb3/1SgqUYZF9Fimf8KJTmva27H3QHD2IOAqAFwi8sCrnROFlZLispHNbGzbTW28QzHWSAtM3hgaE=
+  app: featured-creatures-api
+  on:
+    repo: TheGaff87/featured-creatures-api
