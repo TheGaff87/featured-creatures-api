@@ -1,0 +1,21 @@
+{
+  "name": "featured_creatures_api",
+  "version": "1.0.0",
+  "description": "App that allows users to find animal encounters at zoos around the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michelle Gaffney",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.14"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^6.0.1"
+  }
+}
