@@ -2,9 +2,9 @@
   "name": "featured_creatures_api",
   "version": "1.0.0",
   "description": "App that allows users to find animal encounters at zoos around the world",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "author": "Michelle Gaffney",
   "license": "ISC",
