@@ -26,7 +26,14 @@ const encounterSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    zooLocation: {
+    zooCity: {
+        type: String,
+        required: true
+    },
+    zooState: {
+        type: String,
+    },
+    zooCountry: {
         type: String,
         required: true
     },
@@ -44,6 +51,16 @@ const encounterSchema = mongoose.Schema({
     },
     addedBy: {type: String}
 });
+
+encounterSchema.virtual('zooLocation').get(function() {
+    let result = '';
+    if (this.zooState !== undefined) {
+        result = `${this.zooCity}, ${this.zooState}, ${this.zooCountry}`.trim();
+    } else {
+        result = `${this.zooCity}, ${this.zooCountry}`.trim();
+    } 
+    return result;
+  });
 
 encounterSchema.methods.serialize = function() {
     return {

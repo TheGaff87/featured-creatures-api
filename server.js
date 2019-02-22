@@ -20,6 +20,10 @@ app.use(express.json());
     })
 );*/
 
+app.get('/api/', (req, res) => {
+    res.json({ok: true});
+  });
+ 
 //get all animals for dropdown
 app.get('/api/animals', (req, res) => {
     Encounter
@@ -35,21 +39,117 @@ app.get('/api/animals', (req, res) => {
 
 //group zoos by country for dropdown
 app.get('/api/zoos', (req, res) => {
-    Zoo
-        .find()
-        .sort({country: 1, zooName: 1})
+    Encounter
+        .find({}, 'zooName zooCountry')
+        .sort({zooCountry: 1, zooName: 1})
         .then(zoos => {
-            res.json({
-                zoos: zoos.map(
-                    (zoo) => zoo.serialize())
-                })
-            })
-
+            res.json({zoos})
+        })
         .catch(err => {
             console.error(err);
             res.status(500).json({message: 'Internal server error'});
         });
 });
+
+//encounters for particular animal
+app.get('/api/animal/:term', (req, res) => {
+    Encounter
+        .find({animal: req.params.term})
+        .then(encounters => {
+            res.json({
+              encounters: encounters.map(
+                (encounter) => encounter.serialize())
+            });
+          })
+        
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({message: 'Internal server error'});
+            });
+    })
+
+//encounters for particular zoo
+app.get('/api/zoo/:term', (req, res) => {
+    Encounter
+        .find({zooName: req.params.term})
+        .then(zoos => {
+            res.json({
+              zoos: zoos.map(
+                (zoo) => zoo.serialize())
+            });
+          })
+        
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({message: 'Internal server error'});
+            });
+    })
+
+//adds new encounter
+app.post('/api/encounters', (req, res) => {
+    const requiredFields = ['animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooCity', 'zooCountry', 'encounterCost', 'encounterSchedule', 'encounterDescription'];
+    for (let i = 0; i < requiredFields.length; i++) {
+      const field = requiredFields[i];
+      if (!(field in req.body)) {
+        const message = `Missing \`${field}\` in request body`;
+        console.error(message);
+        return res.status(400).send(message);
+      }
+    }
+  
+    Encounter
+      .create({
+        animal: req.body.animal,
+        encounterImage: req.body.encounterImage,
+        encounterName: req.body.encounterName,
+        encounterWebsite: req.body.encounterWebsite,
+        zooName: req.body.zooName,
+        zooWebsite: req.body.zooWebsite,
+        zooCity: req.body.zooCity,
+        zooState: req.body.zooState,
+        zooCountry: req.body.zooCountry,
+        encounterCost: req.body.encounterCost,
+        encounterSchedule: req.body.encounterSchedule,
+        encounterDescription: req.body.encounterDescription,
+        addedBy: req.body.addedBy
+      })
+      .then(event => res.status(201).json(event.serialize())
+    )
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Internal server error' });
+      });
+  });
+
+  app.put('/api/encounters/:id', (req, res) => {
+  
+    const updated = {};
+    const updateableFields = ['encounterCost', 'encounterSchedule', 'encounterDescription'];
+    updateableFields.forEach(field => {
+      if (field in req.body) {
+        updated[field] = req.body[field];
+      }
+    });
+  
+    Encounter
+      .findByIdAndUpdate(req.params.id, { $set: updated }, { new: true })
+      .then(updatedEncounter => res.status(204).end())
+      
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Internal server error' });
+      });
+  });
+  
+  
+  app.delete('/api/encounters/:id', (req, res) => {
+    Encounter
+      .findByIdAndRemove(req.params.id)
+      .then(() => {
+        console.log(`Deleted encounter \`${req.params.id}\``);
+        res.status(204).end();
+      });
+  });
 
 let server;
 
