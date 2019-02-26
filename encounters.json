@@ -2,10 +2,10 @@
     "animal" : "Kangaroo",
     "encounterImage": "images/kangaroo-feeding.jpeg",
     "encounterName" : "Kangaroo Feeding",
-    "encounterWebsite": "none",
     "zooName" : "Featherdale Wildlife Park",
     "zooWebsite" : "https://www.featherdale.com.au/",
-    "zooLocation" : "Sydney, NSW, Australia",
+    "zooCity" : "Sydney",
+    "zooCountry": "Australia",
     "encounterCost" : "Free",
     "encounterSchedule" : "Everyday",
     "encounterDescription" : "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure."
@@ -14,10 +14,10 @@
     "animal" : "Koala",
     "encounterImage": "images/koala-encounter.jpeg",
     "encounterName" : "Koala Encounter",
-    "encounterWebsite": "none",
     "zooName" : "Featherdale Wildlife Park",
     "zooWebsite" : "https://www.featherdale.com.au/",
-    "zooLocation" : "Sydney, NSW, Australia",
+    "zooCity" : "Sydney",
+    "zooCountry": "Australia",
     "encounterCost" : "$25 AUD",
     "encounterSchedule" : "Everyday",
     "encounterDescription" : "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales."
@@ -29,20 +29,23 @@
     "encounterWebsite": "https://tickets.zoo.org.au/event/kangaroo-close-up",
     "zooName" : "Melbourne Zoo",
     "zooWebsite" : "https://www.zoo.org.au/melbourne",
-    "zooLocation" : "Melbourne, VIC, Australia",
+    "zooCity" : "Melbourne",
+    "zooCountry": "Australia",
     "encounterCost" : "$28.80 AUD",
     "encounterSchedule" : "Everyday",
     "encounterDescription" : "Vistors enter the kangaroo enclosure and are able to pose with and pet several Kangaroo Island kangaroos while the zoo keepers take phots and videos with visitors' phones."
 }
 {
-    "animal" : "Penguins",
+    "animal" : "Penguin",
     "encounterImage": "images/penguin-encounter.jpeg",
     "encounterName" : "Penguins Close-up Tour",
     "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
     "zooName" : "SeaWorld San Diego",
     "zooWebsite" : "https://seaworld.com/san-diego/",
-    "zooLocation" : "San Diego, CA, USA",
-    "encounterCost" : "$60USD - $80USD",
+    "zooCity" : "San Diego",
+    "zooState" : "CA",
+    "zooCountry": "United States",
+    "encounterCost" : "$80 USD",
     "encounterSchedule" : "Everyday",
     "encounterDescription" : "Visitors enter the penguin enclosure and receive in-depth information on penguin care from the keepers. Guests also go behind-the-scenes to see and pet a penguin up close."
 }
@@ -53,8 +56,10 @@
     "encounterWebsite": "https://bronxzoo.com/wild-encounters",
     "zooName" : "Bronx Zoo",
     "zooWebsite" : "https://bronxzoo.com",
-    "zooLocation" : "New York, NY, USA",
-    "encounterCost" : "$59.95USD",
+    "zooCity" : "New York",
+    "zooState" : "NY",
+    "zooCountry": "United States",
+    "encounterCost" : "$59.95 USD",
     "encounterSchedule" : "Select Sundays, Tuesdays, Thursdays, Fridays, and Saturdays",
     "encounterDescription" : "Visitors enjoy a 45-minute educational program learning all about cheetahs and how they are cared for while being brought face-to-face with the amazing animal itself."
 }
