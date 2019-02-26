@@ -1,16 +1,24 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+const passport = require('passport');
 /*const cors = require('cors');
 const {CLIENT_ORIGIN} = require('./config');*/
 
 mongoose.Promise = global.Promise;
 
+const { router: usersRouter } = require('./users');
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
+
 const {PORT, DATABASE_URL } = require('./config');
 
 const {Encounter} = require('./encounter-models');
-const {Zoo} = require('./zoo-models');
 
 const app = express();
+
+app.use(morgan('common'));
+
+app.use(express.static('public'));
 
 app.use(express.json());
 
@@ -19,6 +27,14 @@ app.use(express.json());
         origin: CLIENT_ORIGIN
     })
 );*/
+
+passport.use(localStrategy);
+passport.use(jwtStrategy);
+
+app.use('/api/users/', usersRouter);
+app.use('/api/auth/', authRouter);
+
+const jwtAuth = passport.authenticate('jwt', { session: false });
 
 app.get('/api/', (req, res) => {
     res.json({ok: true});
@@ -40,10 +56,9 @@ app.get('/api/animals', (req, res) => {
 //group zoos by country for dropdown
 app.get('/api/zoos', (req, res) => {
     Encounter
-        .find({}, 'zooName zooCountry')
-        .sort({zooCountry: 1, zooName: 1})
-        .then(zoos => {
-            res.json({zoos})
+        .distinct('zooName')
+        .then(zoo => {
+            res.json({zoo});
         })
         .catch(err => {
             console.error(err);
@@ -86,7 +101,7 @@ app.get('/api/zoo/:term', (req, res) => {
     })
 
 //adds new encounter
-app.post('/api/encounters', (req, res) => {
+app.post('/api/encounters', jwtAuth, (req, res) => {
     const requiredFields = ['animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooCity', 'zooCountry', 'encounterCost', 'encounterSchedule', 'encounterDescription'];
     for (let i = 0; i < requiredFields.length; i++) {
       const field = requiredFields[i];
@@ -121,7 +136,7 @@ app.post('/api/encounters', (req, res) => {
       });
   });
 
-  app.put('/api/encounters/:id', (req, res) => {
+  app.put('/api/encounters/:id', jwtAuth, (req, res) => {
   
     const updated = {};
     const updateableFields = ['encounterCost', 'encounterSchedule', 'encounterDescription'];
@@ -142,7 +157,7 @@ app.post('/api/encounters', (req, res) => {
   });
   
   
-  app.delete('/api/encounters/:id', (req, res) => {
+  app.delete('/api/encounters/:id', jwtAuth, (req, res) => {
     Encounter
       .findByIdAndRemove(req.params.id)
       .then(() => {
