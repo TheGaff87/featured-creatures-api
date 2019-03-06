@@ -20,8 +20,7 @@ function seedData() {
             "encounterName": "Kangaroo Feeding",
             "zooName": "Featherdale Wildlife Park",
             "zooWebsite": "https://www.featherdale.com.au/",
-            "zooCity": "Sydney",
-            "zooCountry": "Australia",
+            "zooLocation": "Sydney, Australia",
             "encounterCost": "Free",
             "encounterSchedule": "Everyday",
             "encounterDescription": "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure."
@@ -32,8 +31,7 @@ function seedData() {
             "encounterName": "Koala Encounter",
             "zooName": "Featherdale Wildlife Park",
             "zooWebsite": "https://www.featherdale.com.au/",
-            "zooCity": "Sydney",
-            "zooCountry": "Australia",
+            "zooLocation": "Sydney, Australia",
             "encounterCost": "$25 AUD",
             "encounterSchedule": "Everyday",
             "encounterDescription": "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales."
@@ -45,9 +43,7 @@ function seedData() {
             "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
             "zooName": "SeaWorld San Diego",
             "zooWebsite": "https://seaworld.com/san-diego/",
-            "zooCity": "San Diego",
-            "zooState": "CA",
-            "zooCountry": "United States",
+            "zooLocation": "San Diego, CA, USA",
             "encounterCost": "$80 USD",
             "encounterSchedule": "Everyday",
             "encounterDescription": "Visitors enter the penguin enclosure and receive in-depth information on penguin care from the keepers. Guests also go behind-the-scenes to see and pet a penguin up close."

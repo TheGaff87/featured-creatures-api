@@ -39,8 +39,8 @@
     "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
     "zooName" : "SeaWorld San Diego",
     "zooWebsite" : "https://seaworld.com/san-diego/",
-    "zooLocation": "San Diego, CA, USA"
-    "encounterCost" : "$80 USD",
+    "zooLocation": "San Diego, CA, USA",
+    "encounterCost": "$80 USD",
     "encounterSchedule" : "Everyday",
     "encounterDescription" : "Visitors enter the penguin enclosure and receive in-depth information on penguin care from the keepers. Guests also go behind-the-scenes to see and pet a penguin up close."
 }
