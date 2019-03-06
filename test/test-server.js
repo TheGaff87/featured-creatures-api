@@ -89,11 +89,13 @@ describe('Featured Creatures API', function () {
                 .then(function (_res) {
                     res = _res;
                     expect(res).to.have.status(200);
-                    expect(res.body.animal).to.have.lengthOf.at.least(1);
+                    expect(res.body).to.have.lengthOf.at.least(1);
                 });
         });
 
-        describe('GET /api/zoos', function () {
+    })
+
+        /*describe('GET /api/zoos', function () {
 
             it('should return all zoos in the database', function () {
                 let res;
@@ -259,8 +261,5 @@ describe('Featured Creatures API', function () {
                         expect(_encounter).to.be.null;
                     });
             });
-        });
-
-
-    })
+        });*/
 });

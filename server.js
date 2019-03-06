@@ -45,7 +45,7 @@ app.get('/api/animals', (req, res) => {
     Encounter
         .distinct('animal')
         .then(animal => {
-            res.json({animal});
+            res.json(animal);
         })
         .catch(err => {
             console.error(err);
@@ -58,7 +58,7 @@ app.get('/api/zoos', (req, res) => {
     Encounter
         .distinct('zooName')
         .then(zoo => {
-            res.json({zoo});
+            res.json(zoo);
         })
         .catch(err => {
             console.error(err);
@@ -71,10 +71,9 @@ app.get('/api/animal/:term', (req, res) => {
     Encounter
         .find({animal: req.params.term})
         .then(encounters => {
-            res.json({
-              encounters: encounters.map(
-                (encounter) => encounter.serialize())
-            });
+            res.json(
+              encounters
+            );
           })
         
         .catch(err => {
@@ -88,11 +87,10 @@ app.get('/api/zoo/:term', (req, res) => {
     Encounter
         .find({zooName: req.params.term})
         .then(zoos => {
-            res.json({
-              zoos: zoos.map(
-                (zoo) => zoo.serialize())
-            });
-          })
+          res.json(
+            zoos
+          );
+        })
         
         .catch(err => {
             console.error(err);
@@ -128,7 +126,7 @@ app.post('/api/encounters', jwtAuth, (req, res) => {
         encounterDescription: req.body.encounterDescription,
         addedBy: req.body.addedBy
       })
-      .then(event => res.status(201).json(event.serialize())
+      .then(event => res.status(201).json(event)
     )
       .catch(err => {
         console.error(err);
