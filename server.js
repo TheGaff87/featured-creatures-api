@@ -97,7 +97,7 @@ app.get('/api/zoo/:term', (req, res) => {
 
 //adds new encounter
 app.post('/api/encounters', jwtAuth, (req, res) => {
-    const requiredFields = ['animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooCity', 'zooCountry', 'encounterCost', 'encounterSchedule', 'encounterDescription'];
+    const requiredFields = ['animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription'];
     for (let i = 0; i < requiredFields.length; i++) {
       const field = requiredFields[i];
       if (!(field in req.body)) {
@@ -115,9 +115,7 @@ app.post('/api/encounters', jwtAuth, (req, res) => {
         encounterWebsite: req.body.encounterWebsite,
         zooName: req.body.zooName,
         zooWebsite: req.body.zooWebsite,
-        zooCity: req.body.zooCity,
-        zooState: req.body.zooState,
-        zooCountry: req.body.zooCountry,
+        zooLocation: req.body.zooLocation,
         encounterCost: req.body.encounterCost,
         encounterSchedule: req.body.encounterSchedule,
         encounterDescription: req.body.encounterDescription,

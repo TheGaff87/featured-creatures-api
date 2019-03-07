@@ -91,7 +91,7 @@ describe('Featured Creatures API', function () {
 
     })
 
-        /*describe('GET /api/zoos', function () {
+        describe('GET /api/zoos', function () {
 
             it('should return all zoos in the database', function () {
                 let res;
@@ -100,7 +100,7 @@ describe('Featured Creatures API', function () {
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
-                        expect(res.body.zoo).to.have.lengthOf.at.least(1);
+                        expect(res.body).to.have.lengthOf.at.least(1);
                     })
             });
         });
@@ -114,7 +114,8 @@ describe('Featured Creatures API', function () {
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
-                        expect(res.body.encounters).to.have.lengthOf.at.least(1);
+                        expect(res.body).to.have.lengthOf.at.least(1);
+                        })
                     })
             });
 
@@ -128,17 +129,17 @@ describe('Featured Creatures API', function () {
                     .then(function (res) {
                         expect(res).to.have.status(200);
                         expect(res).to.be.json;
-                        expect(res.body.encounters).to.be.a('array');
-                        expect(res.body.encounters).to.have.lengthOf.at.least(1);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body).to.have.lengthOf.at.least(1);
 
-                        res.body.encounters.forEach(function (encounter) {
+                        res.body.forEach(function (encounter) {
                             expect(encounter).to.be.a('object');
                             expect(encounter).to.include.keys(
-                                'id', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
+                                '_id', 'animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
+                            expect(encounter.animal).to.equal(selectedAnimal);
                         });
                     })
             });
-        });
 
         describe('GET /api/zoo/:term', function () {
 
@@ -149,9 +150,10 @@ describe('Featured Creatures API', function () {
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
-                        expect(res.body.zoos).to.have.lengthOf.at.least(1);
+                        expect(res.body).to.have.lengthOf.at.least(1);
                     })
-            });
+                })
+            
 
 
             it('should return encounters with correct fields', function () {
@@ -163,13 +165,13 @@ describe('Featured Creatures API', function () {
                     .then(function (res) {
                         expect(res).to.have.status(200);
                         expect(res).to.be.json;
-                        expect(res.body.zoos).to.be.a('array');
-                        expect(res.body.zoos).to.have.lengthOf.at.least(1);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body).to.have.lengthOf.at.least(1);
 
-                        res.body.zoos.forEach(function (encounter) {
+                        res.body.forEach(function (encounter) {
                             expect(encounter).to.be.a('object');
                             expect(encounter).to.include.keys(
-                                'id', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
+                                '_id', 'animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
                         });
                     })
             });
@@ -185,9 +187,7 @@ describe('Featured Creatures API', function () {
                     "encounterWebsite": "https://seaworld.com/san-diego/experiences/dolphin-encounter/",
                     "zooName": "SeaWorld San Diego",
                     "zooWebsite": "https://seaworld.com/san-diego/",
-                    "zooCity": "San Diego",
-                    "zooState": "CA",
-                    "zooCountry": "United States",
+                    "zooLocation": "San Diego, CA, USA",
                     "encounterCost": "$80 USD",
                     "encounterSchedule": "Everyday",
                     "encounterDescription": "Visitors have an opportunity to touch and feed bottlenose dolphins, as well as learn different hand signals used to communicate with these animals.",
@@ -202,8 +202,8 @@ describe('Featured Creatures API', function () {
                         expect(res).to.be.json;
                         expect(res.body).to.be.a('object');
                         expect(res.body).to.include.keys(
-                            'id', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
-                        expect(res.body.id).to.not.be.null;
+                            '_id', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
+                        expect(res.body._id).to.not.be.null;
                     })
             });
         });
@@ -257,5 +257,5 @@ describe('Featured Creatures API', function () {
                         expect(_encounter).to.be.null;
                     });
             });
-        });*/
-});
+        });
+    });
