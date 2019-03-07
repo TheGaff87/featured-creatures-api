@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
-/*const cors = require('cors');
-const {CLIENT_ORIGIN} = require('./config');*/
+const cors = require('cors');
+const {CLIENT_ORIGIN} = require('./config');
 
 mongoose.Promise = global.Promise;
 
@@ -22,11 +22,8 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
-/*app.use(
-    cors({
-        origin: CLIENT_ORIGIN
-    })
-);*/
+app.use(cors());
+app.options('*', cors());
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);
