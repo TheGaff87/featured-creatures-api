@@ -50,7 +50,7 @@ app.get('/api/animals', (req, res) => {
         });
 });
 
-//group zoos by country for dropdown
+//get all zoos for dropdown
 app.get('/api/zoos', (req, res) => {
     Encounter
         .distinct('zooName')
