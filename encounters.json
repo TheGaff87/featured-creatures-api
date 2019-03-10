@@ -1,6 +1,6 @@
 {
     "animal" : "Kangaroo",
-    "encounterImage": "images/kangaroo-feeding.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/kangaroo-feeding.jpeg",
     "encounterName" : "Kangaroo Feeding",
     "zooName" : "Featherdale Wildlife Park",
     "zooWebsite" : "https://www.featherdale.com.au/",
@@ -11,7 +11,7 @@
 }
 {
     "animal" : "Koala",
-    "encounterImage": "images/koala-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/koala-encounter.jpeg",
     "encounterName" : "Koala Encounter",
     "zooName" : "Featherdale Wildlife Park",
     "zooWebsite" : "https://www.featherdale.com.au/",
@@ -22,7 +22,7 @@
 }
 {
     "animal" : "Kangaroo",
-    "encounterImage": "images/kangaroo-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/kangaroo-encounter.jpeg",
     "encounterName" : "Kangaroo Close-up",
     "encounterWebsite": "https://tickets.zoo.org.au/event/kangaroo-close-up",
     "zooName" : "Melbourne Zoo",
@@ -34,7 +34,7 @@
 }
 {
     "animal" : "Penguin",
-    "encounterImage": "images/penguin-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/penguin-encounter.jpeg",
     "encounterName" : "Penguins Close-up Tour",
     "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
     "zooName" : "SeaWorld San Diego",
@@ -46,7 +46,7 @@
 }
 {
     "animal" : "Cheetah",
-    "encounterImage": "images/cheetah-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/cheetah-encounter.jpeg",
     "encounterName" : "Cheetah Connection",
     "encounterWebsite": "https://bronxzoo.com/wild-encounters",
     "zooName" : "Bronx Zoo",
