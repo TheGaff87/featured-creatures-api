@@ -11,7 +11,7 @@
 }
 {
     "animal" : "Koala",
-    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/koala-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/koala-encounter.jpg",
     "encounterName" : "Koala Encounter",
     "zooName" : "Featherdale Wildlife Park",
     "zooWebsite" : "https://www.featherdale.com.au/",
@@ -46,7 +46,7 @@
 }
 {
     "animal" : "Cheetah",
-    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/cheetah-encounter.jpeg",
+    "encounterImage": "https://featured-creatures-api.herokuapp.com/images/cheetah-encounter.jpg",
     "encounterName" : "Cheetah Connection",
     "encounterWebsite": "https://bronxzoo.com/wild-encounters",
     "zooName" : "Bronx Zoo",
