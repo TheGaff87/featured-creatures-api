@@ -105,6 +105,41 @@ describe('Featured Creatures API', function () {
             });
         });
 
+        describe('GET /api/encounters', function () {
+
+            it('should return all encounters in database', function () {
+                let res;
+                return chai.request(app)
+                    .get('/api/encounters')
+                    .then(function (_res) {
+                        res = _res;
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.lengthOf.at.least(1);
+                        })
+                    })
+            });
+
+
+            it('should return encounters with correct fields', function () {
+
+                let resEvent;;
+                return chai.request(app)
+                    .get('/api/encounters')
+                    .then(function (res) {
+                        expect(res).to.have.status(200);
+                        expect(res).to.be.json;
+                        expect(res.body).to.be.a('array');
+                        expect(res.body).to.have.lengthOf.at.least(1);
+
+                        res.body.forEach(function (encounter) {
+                            expect(encounter).to.be.a('object');
+                            expect(encounter).to.include.keys(
+                                '_id', 'animal', 'encounterImage', 'encounterName', 'zooName', 'zooWebsite', 'zooLocation', 'encounterCost', 'encounterSchedule', 'encounterDescription');
+                        });
+                    })
+            });
+
+
         describe('GET /api/animal/:term', function () {
 
             it('should return all encounters for particular animal', function () {

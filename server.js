@@ -37,6 +37,23 @@ app.get('/api/', jwtAuth, (req, res) => {
     res.json({ok: true});
   });
  
+//get all encounters
+app.get('/api/encounters', (req, res) => {
+  Encounter
+    .find()
+    .sort({animal: 1})
+    .then(encounters => {
+      res.json(
+        encounters
+      )
+    })
+
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({message: 'Internal server error'});
+      });
+})
+
 //get all animals for dropdown
 app.get('/api/animals', (req, res) => {
     Encounter
