@@ -7,7 +7,8 @@
     "zooLocation": "Sydney, Australia",
     "encounterCost" : "Free",
     "encounterSchedule" : "Everyday",
-    "encounterDescription" : "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure."
+    "encounterDescription" : "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure.",
+    "addedBy" : "user1"
 }
 {
     "animal" : "Koala",
@@ -18,7 +19,8 @@
     "zooLocation": "Sydney, Australia",
     "encounterCost" : "$25 AUD",
     "encounterSchedule" : "Everyday",
-    "encounterDescription" : "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales."
+    "encounterDescription" : "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales.",
+    "addedBy" : "user2"
 }
 {
     "animal" : "Kangaroo",
@@ -42,7 +44,8 @@
     "zooLocation": "San Diego, CA, USA",
     "encounterCost": "$80 USD",
     "encounterSchedule" : "Everyday",
-    "encounterDescription" : "Visitors enter the penguin enclosure and receive in-depth information on penguin care from the keepers. Guests also go behind-the-scenes to see and pet a penguin up close."
+    "encounterDescription" : "Visitors enter the penguin enclosure and receive in-depth information on penguin care from the keepers. Guests also go behind-the-scenes to see and pet a penguin up close.",
+    "addedBy" : "user1"
 }
 {
     "animal" : "Cheetah",

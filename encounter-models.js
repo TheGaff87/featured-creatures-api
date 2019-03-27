@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const encounterSchema = mongoose.Schema({
     animal: {
         type: String,
+        uppercase: true,
         required: true
     },
     encounterImage: {
