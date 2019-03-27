@@ -15,7 +15,7 @@ chai.use(chaiHttp);
 function seedData() {
     const encounterData = [
         {
-            "animal": "Kangaroo",
+            "animal": "KANGAROO",
             "encounterImage": "images/kangaroo-feeding.jpeg",
             "encounterName": "Kangaroo Feeding",
             "zooName": "Featherdale Wildlife Park",
@@ -26,7 +26,7 @@ function seedData() {
             "encounterDescription": "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure."
         },
         {
-            "animal": "Koala",
+            "animal": "KOALA",
             "encounterImage": "images/koala-encounter.jpeg",
             "encounterName": "Koala Encounter",
             "zooName": "Featherdale Wildlife Park",
@@ -37,7 +37,7 @@ function seedData() {
             "encounterDescription": "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales."
         },
         {
-            "animal": "Penguin",
+            "animal": "PENGUINS",
             "encounterImage": "images/penguin-encounter.jpeg",
             "encounterName": "Penguins Close-up Tour",
             "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
@@ -145,7 +145,7 @@ describe('Featured Creatures API', function () {
             it('should return all encounters for particular animal', function () {
                 let res;
                 return chai.request(app)
-                    .get('/api/animal/Kangaroo')
+                    .get('/api/animal/KANGAROO')
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
@@ -158,7 +158,7 @@ describe('Featured Creatures API', function () {
             it('should return encounters with correct fields', function () {
 
                 let resEvent;
-                let selectedAnimal = 'Kangaroo';
+                let selectedAnimal = 'KANGAROO';
                 return chai.request(app)
                     .get('/api/animal/' + selectedAnimal)
                     .then(function (res) {
