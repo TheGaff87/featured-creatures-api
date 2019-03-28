@@ -1,8 +1,8 @@
 {
-    "animal" : "Kangaroo",
+    "animal" : "KANGAROO",
     "encounterImage": "https://featured-creatures-api.herokuapp.com/images/kangaroo-feeding.jpeg",
     "encounterName" : "Kangaroo Feeding",
-    "zooName" : "Featherdale Wildlife Park",
+    "zooName" : "FEATHERDALE WILDLIFE PARK",
     "zooWebsite" : "https://www.featherdale.com.au/",
     "zooLocation": "Sydney, Australia",
     "encounterCost" : "Free",
@@ -11,10 +11,10 @@
     "addedBy" : "user1"
 }
 {
-    "animal" : "Koala",
+    "animal" : "KOALA",
     "encounterImage": "https://featured-creatures-api.herokuapp.com/images/koala-encounter.jpg",
     "encounterName" : "Koala Encounter",
-    "zooName" : "Featherdale Wildlife Park",
+    "zooName" : "FEATHERDALE WILDLIFE PARK",
     "zooWebsite" : "https://www.featherdale.com.au/",
     "zooLocation": "Sydney, Australia",
     "encounterCost" : "$25 AUD",
@@ -23,11 +23,11 @@
     "addedBy" : "user2"
 }
 {
-    "animal" : "Kangaroo",
+    "animal" : "KANGAROO",
     "encounterImage": "https://featured-creatures-api.herokuapp.com/images/kangaroo-encounter.jpeg",
     "encounterName" : "Kangaroo Close-up",
     "encounterWebsite": "https://tickets.zoo.org.au/event/kangaroo-close-up",
-    "zooName" : "Melbourne Zoo",
+    "zooName" : "MELBOURNE ZOO",
     "zooWebsite" : "https://www.zoo.org.au/melbourne",
     "zooLocation": "Melbourne, Australia",
     "encounterCost" : "$28.80 AUD",
@@ -35,11 +35,11 @@
     "encounterDescription" : "Vistors enter the kangaroo enclosure and are able to pose with and pet several Kangaroo Island kangaroos while the zoo keepers take phots and videos with visitors' phones."
 }
 {
-    "animal" : "Penguin",
+    "animal" : "PENGUIN",
     "encounterImage": "https://featured-creatures-api.herokuapp.com/images/penguin-encounter.jpeg",
     "encounterName" : "Penguins Close-up Tour",
     "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
-    "zooName" : "SeaWorld San Diego",
+    "zooName" : "SEAWORLD SAN DIEGO",
     "zooWebsite" : "https://seaworld.com/san-diego/",
     "zooLocation": "San Diego, CA, USA",
     "encounterCost": "$80 USD",
@@ -48,11 +48,11 @@
     "addedBy" : "user1"
 }
 {
-    "animal" : "Cheetah",
+    "animal" : "CHEETAH",
     "encounterImage": "https://featured-creatures-api.herokuapp.com/images/cheetah-encounter.jpg",
     "encounterName" : "Cheetah Connection",
     "encounterWebsite": "https://bronxzoo.com/wild-encounters",
-    "zooName" : "Bronx Zoo",
+    "zooName" : "BRONX ZOO",
     "zooWebsite" : "https://bronxzoo.com",
     "zooLocation": "New York, NY, USA",
     "encounterCost" : "$59.95 USD",

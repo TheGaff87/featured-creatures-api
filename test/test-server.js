@@ -15,10 +15,10 @@ chai.use(chaiHttp);
 function seedData() {
     const encounterData = [
         {
-            "animal": "Kangaroo",
+            "animal": "KANGAROO",
             "encounterImage": "images/kangaroo-feeding.jpeg",
             "encounterName": "Kangaroo Feeding",
-            "zooName": "Featherdale Wildlife Park",
+            "zooName": "FEATHERDALE WILDLIFE PARK",
             "zooWebsite": "https://www.featherdale.com.au/",
             "zooLocation": "Sydney, Australia",
             "encounterCost": "Free",
@@ -26,10 +26,10 @@ function seedData() {
             "encounterDescription": "Visitors can buy kangaroo feed for $2 and hand feed the kangaroos inside their enclosure."
         },
         {
-            "animal": "Koala",
+            "animal": "KOALA",
             "encounterImage": "images/koala-encounter.jpeg",
             "encounterName": "Koala Encounter",
-            "zooName": "Featherdale Wildlife Park",
+            "zooName": "FEATHERDALE WILDLIFE PARK",
             "zooWebsite": "https://www.featherdale.com.au/",
             "zooLocation": "Sydney, Australia",
             "encounterCost": "$25 AUD",
@@ -37,11 +37,11 @@ function seedData() {
             "encounterDescription": "Visitors pose for a photo with a koala. You may pet the koala, but it is illegal to hold koalas without the proper certification in New South Wales."
         },
         {
-            "animal": "Penguins",
+            "animal": "PENGUIN",
             "encounterImage": "images/penguin-encounter.jpeg",
             "encounterName": "Penguins Close-up Tour",
             "encounterWebsite": "https://seaworld.com/san-diego/experiences/penguins-up-close-tour/",
-            "zooName": "SeaWorld San Diego",
+            "zooName": "SEAWORLD SAN DIEGO",
             "zooWebsite": "https://seaworld.com/san-diego/",
             "zooLocation": "San Diego, CA, USA",
             "encounterCost": "$80 USD",
@@ -51,7 +51,7 @@ function seedData() {
     ];
     return Encounter.insertMany(encounterData);
 }
-const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM3NWFiMjQ4NjVlYjMwZmM0YzUwMzI3IiwidXNlcm5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE1NTEyMTU0NTUsImV4cCI6MTU1MzgwNzQ1NSwic3ViIjoidXNlcjEifQ.NFAGfe4rhHcEj5JbolrlpGpoPJMJd7zUtGsRj9vA-Sk'
+const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM3OTgzODI1NjAyMTQwMDE3OTZmYmY1IiwidXNlcm5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE1NTE0Njc0MTUsImV4cCI6MTU1NDA1OTQxNSwic3ViIjoidXNlcjEifQ.WcY9URw-aw5sn14H9KEqW3XIozealU3GZwoVHpgkMJ4'
 
 function tearDownDb() {
     console.warn('Deleting database');
@@ -145,7 +145,7 @@ describe('Featured Creatures API', function () {
             it('should return all encounters for particular animal', function () {
                 let res;
                 return chai.request(app)
-                    .get('/api/animal/Kangaroo')
+                    .get('/api/animal/KANGAROO')
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
@@ -158,7 +158,7 @@ describe('Featured Creatures API', function () {
             it('should return encounters with correct fields', function () {
 
                 let resEvent;
-                let selectedAnimal = 'Kangaroo';
+                let selectedAnimal = 'KANGAROO';
                 return chai.request(app)
                     .get('/api/animal/' + selectedAnimal)
                     .then(function (res) {
@@ -181,7 +181,7 @@ describe('Featured Creatures API', function () {
             it('should return all encounters for particular zoo', function () {
                 let res;
                 return chai.request(app)
-                    .get('/api/zoo/SeaWorld San Diego')
+                    .get('/api/zoo/SEAWORLD SAN DIEGO')
                     .then(function (_res) {
                         res = _res;
                         expect(res).to.have.status(200);
@@ -194,7 +194,7 @@ describe('Featured Creatures API', function () {
             it('should return encounters with correct fields', function () {
 
                 let resEvent;
-                let selectedZoo = 'SeaWorld San Diego';
+                let selectedZoo = 'SEAWORLD SAN DIEGO';
                 return chai.request(app)
                     .get('/api/zoo/' + selectedZoo)
                     .then(function (res) {
