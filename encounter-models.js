@@ -21,6 +21,7 @@ const encounterSchema = mongoose.Schema({
     },
     zooName: {
         type: String,
+        uppercase: true,
         required: true,
     },
     zooWebsite: {
