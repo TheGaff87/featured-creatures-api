@@ -173,6 +173,10 @@ app.post('/api/encounters', jwtAuth, (req, res) => {
       .then(() => {
         console.log(`Deleted encounter \`${req.params.id}\``);
         res.status(204).end();
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ message: 'Internal server error' });
       });
   });
 
