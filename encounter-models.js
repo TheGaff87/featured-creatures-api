@@ -14,7 +14,6 @@ const encounterSchema = mongoose.Schema({
     },
     encounterName: {
         type: String,
-        unique: true,
         required: true,
     },
     encounterWebsite: {
