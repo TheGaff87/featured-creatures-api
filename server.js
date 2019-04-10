@@ -146,6 +146,7 @@ app.post('/api/encounters', jwtAuth, (req, res) => {
       });
   });
 
+  //updates certain fields for specified encounter
   app.put('/api/encounters/:id', jwtAuth, (req, res) => {
   
     const updated = {};
@@ -166,7 +167,7 @@ app.post('/api/encounters', jwtAuth, (req, res) => {
       });
   });
   
-  
+  //deletes specified encounter
   app.delete('/api/encounters/:id', jwtAuth, (req, res) => {
     Encounter
       .findByIdAndRemove(req.params.id)
