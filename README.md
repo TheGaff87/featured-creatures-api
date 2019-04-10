@@ -1,7 +1,7 @@
 # Featured Creatures
 Find behind-the-scenes, up-close-and-personal encounters with your favorite animals at zoos in your city and around the world.
 
-You are currently viewing the server-side repo. [Featured Creatures client-side GitHub repo](https://github.com/TheGaff87/featured-creatures-client)
+You are currently viewing the server-side repo. [Featured Creatures client-side GitHub repo](https://github.com/TheGaff87/featured_creatures_client)
 
 ## Link to live app:
 https://featured-creatures.herokuapp.com/
