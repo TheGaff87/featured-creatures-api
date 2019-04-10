@@ -51,7 +51,7 @@ function seedData() {
     ];
     return Encounter.insertMany(encounterData);
 }
-const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM3OTgzODI1NjAyMTQwMDE3OTZmYmY1IiwidXNlcm5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE1NTE0Njc0MTUsImV4cCI6MTU1NDA1OTQxNSwic3ViIjoidXNlcjEifQ.WcY9URw-aw5sn14H9KEqW3XIozealU3GZwoVHpgkMJ4'
+const token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM3OTgzODI1NjAyMTQwMDE3OTZmYmY1IiwidXNlcm5hbWUiOiJ1c2VyMSJ9LCJpYXQiOjE1NTQ5MjUzMDMsImV4cCI6MTU1NzUxNzMwMywic3ViIjoidXNlcjEifQ.gKXdjmLAJRhCqmzsohzo9VlpK_Q0Ie4a_GBP2zjvTG4'
 
 function tearDownDb() {
     console.warn('Deleting database');
